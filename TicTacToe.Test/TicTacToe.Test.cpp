@@ -41,6 +41,20 @@ namespace TicTacToeTest
 			Assert::AreEqual('O', b.GetSquare(1, 1));
 		}
 
+		TEST_METHOD(TestGetSquareIFOutOfBounds)
+		{
+			// Arrange
+			Board b;
+			b.SetSquare(0, 0, 'X');
+
+			// Act + Assert 
+			Assert::AreEqual(' ', b.GetSquare(-1, 0));
+			Assert::AreEqual(' ', b.GetSquare(0, -1));
+			Assert::AreEqual(' ', b.GetSquare(3, 0));
+			Assert::AreEqual(' ', b.GetSquare(0, 3));
+		}
+
+
 		//TEST_METHOD(TestBoardCreate)
 		//{
 		//	Board b;
